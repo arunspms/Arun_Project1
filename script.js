@@ -291,59 +291,51 @@ document.getElementById("yesBtn").addEventListener("click", () => {
 
 // NO Button
 
+// NO Button
+
+// ❤️ Cute NO Button
+
 const noBtn = document.getElementById("noBtn");
 
-let clickCount = 0;
-
-const messages = [
-
-    "🥺 Are you sure?",
-
-    "❤️ Think once again!",
-
-    "😍 Please don't say no!",
-
-    "💖 Give me one chance!",
-
-    "😂 Nice try!"
-
+const cuteMessages = [
+    "🥺 No?",
+    "😢 Really?",
+    "💖 Think again!",
+    "🥹 Please...",
+    "❤️ Pretty please?",
+    "😘 Are you sure?",
+    "🙈 Try catching me!",
+    "😂 Nope!",
+    "💕 I know you love me!",
+    "😍 Just press YES!"
 ];
 
-function moveButton(){
+let msgIndex = 0;
 
-    clickCount++;
+function escapeNoButton() {
 
-    let maxX = window.innerWidth - 150;
+    // Change the message
+    noBtn.innerHTML = cuteMessages[msgIndex];
+    msgIndex = (msgIndex + 1) % cuteMessages.length;
 
-    let maxY = window.innerHeight - 80;
+    // Move to a random position
+    const x = Math.random() * (window.innerWidth - 170);
+    const y = Math.random() * (window.innerHeight - 80);
 
     noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
 
-    noBtn.style.left = Math.random() * maxX + "px";
-
-    noBtn.style.top = Math.random() * maxY + "px";
-
-    if(clickCount < messages.length){
-
-        noBtn.innerHTML = messages[clickCount];
-
-    }
-
-    if(clickCount >= 5){
-
-        noBtn.style.display = "none";
-
-        document.getElementById("yesBtn").style.transform = "scale(1.3)";
-
-        document.getElementById("yesBtn").innerHTML = "❤️ YES ❤️";
-
-    }
-
+    // Little spin animation
+    noBtn.style.transform = "rotate(" + (Math.random() * 40 - 20) + "deg) scale(1.1)";
 }
 
-noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("mouseover", escapeNoButton);
 
-noBtn.addEventListener("click", moveButton);
+noBtn.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    escapeNoButton();
+});
 
 // Floating Hearts
 
