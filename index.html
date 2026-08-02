@@ -1,26 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Happy Birthday Chandu ❤️</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Chandu ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
 </head>
+
 <body>
-<div class="card">
-<h1 id="title">A Surprise For Chandu ❤️</h1>
-<div id="countdown"></div>
-<div id="content" style="display:none">
-<h2>🎉 Happy Birthday Chandu! 🎂</h2>
-<p>Dear Chandu,<br>You are the most beautiful part of my life. Thank you for filling my days with love, laughter and happiness.</p>
-<h1>💍 Will You Marry Me?</h1>
-<div class="buttons">
-<button id="yes">❤️ Yes</button>
-<button id="no">💔 No</button>
-</div>
-</div>
-</div>
-<script src="script.js"></script>
+
+    <!-- Loading Screen -->
+
+    <div id="loader">
+
+        <h1>❤️</h1>
+
+        <h2>Preparing Your Surprise...</h2>
+
+    </div>
+
+    <!-- Animated Stars -->
+
+    <div class="stars"></div>
+
+    <div class="twinkling"></div>
+
+    <!-- Floating Hearts -->
+
+    <div class="hearts">
+
+        <span>❤️</span>
+
+        <span>💕</span>
+
+        <span>💖</span>
+
+        <span>💗</span>
+
+        <span>💘</span>
+
+    </div>
+
+    <!-- Main Container -->
+
+    <div class="container">
+
+        <section id="countdownPage">
+
+            <h3>For My Beautiful Girl</h3>
+
+            <h1 class="name">
+
+                Chandu ❤️
+
+            </h1>
+
+            <h2>
+
+                A Surprise Is Waiting...
+
+            </h2>
+
+            <div class="countdown">
+
+                <div class="box">
+
+                    <span id="days">00</span>
+
+                    <small>Days</small>
+
+                </div>
+
+                <div class="box">
+
+                    <span id="hours">00</span>
+
+                    <small>Hours</small>
+
+                </div>
+
+                <div class="box">
+
+                    <span id="minutes">00</span>
+
+                    <small>Minutes</small>
+
+                </div>
+
+                <div class="box">
+
+                    <span id="seconds">00</span>
+
+                    <small>Seconds</small>
+
+                </div>
+
+            </div>
+
+            <p>
+
+                Don't open your surprise before your birthday ❤️
+
+            </p>
+
+        </section>
+
+        <!-- Birthday Section -->
+
+        <section id="birthdayPage" class="hidden">
+
+            <h1>
+
+                🎉 Happy Birthday Chandu 🎉
+
+            </h1>
+
+            <h2>
+
+                ❤️ Wishing You Endless Happiness ❤️
+
+            </h2>
+
+            <div class="cake">
+
+                🎂
+
+            </div>
+
+            <button id="giftBtn">
+
+                🎁 Open Your Birthday Gift
+
+            </button>
+
+        </section>
+
+        <!-- Gift Section -->
+
+        <section id="giftPage" class="hidden">
+
+            <div class="giftBox">
+
+                🎁
+
+            </div>
+
+            <h2>
+
+                Tap The Gift
+
+            </h2>
+
+        </section>
+
+        <!-- Love Letter -->
+
+        <section id="letterPage" class="hidden">
+
+            <h1>
+
+                💌 A Letter For You
+
+            </h1>
+
+            <div class="letter">
+
+                <p id="typing">
+
+                </p>
+
+            </div>
+
+            <button id="nextGallery">
+
+                Continue ❤️
+
+            </button>
+
+        </section>
+        <!-- Memory Gallery -->
+
+        <section id="galleryPage" class="hidden">
+
+            <h1>📸 Our Beautiful Memories</h1>
+
+            <p class="galleryText">
+
+                Every picture reminds me how lucky I am to have you in my life ❤️
+
+            </p>
+
+            <div class="gallery">
+
+                <img src="images/photo1.jpg" class="slide active">
+
+                <img src="images/photo2.jpg" class="slide">
+
+                <img src="images/photo3.jpg" class="slide">
+
+                <img src="images/photo4.jpg" class="slide">
+
+                <img src="images/photo5.jpg" class="slide">
+
+            </div>
+
+            <div class="galleryButtons">
+
+                <button id="prevPhoto">
+
+                    ⬅ Previous
+
+                </button>
+
+                <button id="nextPhoto">
+
+                    Next ➡
+
+                </button>
+
+            </div>
+
+            <button id="proposalBtn" class="continueBtn">
+
+                Continue To My Last Surprise ❤️
+
+            </button>
+
+        </section>
+
+
+
+        <!-- Proposal Section -->
+
+        <section id="proposalPage" class="hidden">
+
+            <div class="ring">
+
+                💍
+
+            </div>
+
+            <h3>
+
+                My Dearest Chandu...
+
+            </h3>
+
+            <h1 class="proposalTitle">
+
+                Will You Marry Me?
+
+            </h1>
+
+            <p class="proposalText">
+
+                I never imagined someone could make my life so beautiful.
+
+                Every smile of yours becomes my happiness.
+
+                Every tear of yours becomes my pain.
+
+                I don't just want today...
+
+                I want every tomorrow with you.
+
+                I promise to stand beside you,
+
+                support you,
+
+                respect you,
+
+                protect you,
+
+                and love you forever.
+
+            </p>
+
+            <div class="proposalButtons">
+
+                <button id="yesBtn">
+
+                    ❤️ YES ❤️
+
+                </button>
+
+                <button id="noBtn">
+
+                    💔 NO
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Yes Celebration -->
+
+        <section id="yesPage" class="hidden">
+
+            <div class="celebration">
+
+                ❤️❤️❤️
+
+            </div>
+
+            <h1>
+
+                She Said YES!!
+
+            </h1>
+
+            <h2>
+
+                💍
+
+            </h2>
+
+            <p>
+
+                You just made me the happiest man alive.
+
+            </p>
+
+            <p>
+
+                I promise...
+
+            </p>
+
+            <ul class="promiseList">
+
+                <li>❤️ To Love You</li>
+
+                <li>❤️ To Respect You</li>
+
+                <li>❤️ To Care For You</li>
+
+                <li>❤️ To Make You Smile</li>
+
+                <li>❤️ To Stand Beside You Forever</li>
+
+            </ul>
+
+            <button id="finalBtn">
+
+                Forever Starts Here ❤️
+
+            </button>
+
+        </section>
+
+
+
+        <!-- Final Screen -->
+
+        <section id="finalPage" class="hidden">
+
+            <h1>
+
+                Arun ❤️ Chandu
+
+            </h1>
+
+            <h2>
+
+                Forever Begins Today
+
+            </h2>
+
+            <h3>
+
+                12 August ❤️
+
+            </h3>
+
+            <div class="infinity">
+
+                ♾️
+
+            </div>
+
+            <p>
+
+                Thank you for saying YES.
+
+                I can't wait to spend every birthday,
+
+                every smile,
+
+                every dream,
+
+                and every tomorrow with you.
+
+            </p>
+
+            <h2 class="love">
+
+                I Love You Forever ❤️
+
+            </h2>
+
+        </section>
+
+    </div>
+
+      <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="music/romantic.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Rose Petals -->
+    <div class="petals">
+        <span>🌹</span>
+        <span>🌹</span>
+        <span>🌹</span>
+        <span>🌹</span>
+        <span>🌹</span>
+        <span>🌹</span>
+        <span>🌹</span>
+    </div>
+
+    <!-- Floating Sparkles -->
+    <div class="sparkles">
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+    </div>
+
+    <!-- Floating Balloons -->
+    <div class="balloons">
+        <div class="balloon red"></div>
+        <div class="balloon blue"></div>
+        <div class="balloon pink"></div>
+        <div class="balloon yellow"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+
+        <h2>
+            Made With ❤️ By Arun
+        </h2>
+
+        <p>
+            Happy Birthday Chandu ❤️
+        </p>
+
+    </footer>
+
+    <!-- External Libraries -->
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Main JavaScript -->
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
+      
