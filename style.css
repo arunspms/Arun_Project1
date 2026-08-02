@@ -1,5 +1,1301 @@
-body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ff6fa5,#7b68ee);display:flex;justify-content:center;align-items:center;height:100vh;color:#fff;overflow:hidden}
-.card{background:rgba(255,255,255,.15);padding:30px;border-radius:20px;text-align:center;backdrop-filter:blur(10px);max-width:700px}
-button{padding:12px 24px;margin:10px;border:none;border-radius:30px;font-size:18px;cursor:pointer}
-#yes{background:#28a745;color:#fff}#no{background:#dc3545;color:#fff;position:relative}
-#countdown{font-size:2rem;font-weight:bold}
+/* ===================================
+   Arun ❤️ Chandu Proposal Website
+   Premium CSS - Part 1
+=================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(135deg,#ff4d94,#8b5cf6,#3b82f6);
+
+    background-size:400% 400%;
+
+    animation:bgAnimation 15s ease infinite;
+
+    overflow-x:hidden;
+
+    color:white;
+
+    min-height:100vh;
+
+}
+
+/* Animated Background */
+
+@keyframes bgAnimation{
+
+0%{background-position:0% 50%;}
+
+50%{background-position:100% 50%;}
+
+100%{background-position:0% 50%;}
+
+}
+
+/* Stars */
+
+.stars{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background-image:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:50px 50px;
+
+opacity:.25;
+
+z-index:-3;
+
+}
+
+/* Twinkling */
+
+.twinkling{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background-image:
+radial-gradient(#fff 1px,transparent 1px);
+
+background-size:120px 120px;
+
+animation:twinkle 8s linear infinite;
+
+opacity:.4;
+
+z-index:-2;
+
+}
+
+@keyframes twinkle{
+
+0%{opacity:.2;}
+
+50%{opacity:.6;}
+
+100%{opacity:.2;}
+
+}
+
+/* Floating Hearts */
+
+.hearts{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.hearts span{
+
+position:absolute;
+
+bottom:-80px;
+
+font-size:28px;
+
+animation:floatHeart 12s linear infinite;
+
+opacity:.7;
+
+}
+
+.hearts span:nth-child(1){left:8%;animation-delay:0s;}
+.hearts span:nth-child(2){left:25%;animation-delay:2s;}
+.hearts span:nth-child(3){left:45%;animation-delay:4s;}
+.hearts span:nth-child(4){left:65%;animation-delay:6s;}
+.hearts span:nth-child(5){left:85%;animation-delay:8s;}
+
+@keyframes floatHeart{
+
+0%{
+
+transform:translateY(0) rotate(0deg);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-110vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+/* Main Container */
+
+.container{
+
+width:100%;
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
+flex-direction:column;
+
+}
+
+/* Glass Card */
+
+section{
+
+width:95%;
+
+max-width:800px;
+
+padding:35px;
+
+margin:20px auto;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.25);
+
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+
+text-align:center;
+
+animation:fadeUp 1s ease;
+
+}
+
+.hidden{
+
+display:none;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Heading */
+
+.name{
+
+font-family:'Great Vibes',cursive;
+
+font-size:4rem;
+
+margin:20px 0;
+
+color:#fff;
+
+text-shadow:0 0 20px hotpink;
+
+}
+
+/* Countdown */
+
+.countdown{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+margin:40px 0;
+
+}
+
+.box{
+
+width:95px;
+
+height:110px;
+
+background:rgba(255,255,255,.15);
+
+border-radius:20px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:0 10px 20px rgba(0,0,0,.25);
+
+transition:.4s;
+
+}
+
+.box:hover{
+
+transform:translateY(-8px);
+
+background:rgba(255,255,255,.22);
+
+}
+
+.box span{
+
+font-size:2rem;
+
+font-weight:bold;
+
+}
+
+.box small{
+
+margin-top:8px;
+
+font-size:15px;
+
+letter-spacing:1px;
+
+}
+
+/* Paragraph */
+
+p{
+
+font-size:18px;
+
+line-height:1.8;
+
+margin-top:20px;
+
+}
+
+/* Buttons */
+
+button{
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4d94;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.3s;
+
+font-weight:600;
+
+margin-top:25px;
+
+box-shadow:0 8px 20px rgba(255,77,148,.4);
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+background:#ff2b7b;
+
+}
+
+/* Loader */
+
+#loader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#120022;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+}
+
+#loader h1{
+
+font-size:70px;
+
+animation:pulse 1s infinite;
+
+}
+
+#loader h2{
+
+margin-top:20px;
+
+font-size:24px;
+
+}
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+}
+
+/* ===================================
+   Premium CSS - Part 2
+   Birthday • Gift • Letter
+===================================*/
+
+/* Birthday Section */
+
+#birthdayPage h1{
+    font-size:3rem;
+    color:#fff;
+    margin-bottom:20px;
+    text-shadow:0 0 20px #ff66b2;
+}
+
+#birthdayPage h2{
+    font-size:1.5rem;
+    margin-bottom:30px;
+    font-weight:400;
+}
+
+.cake{
+
+    font-size:110px;
+
+    animation:bounceCake 2s infinite;
+
+    margin:30px auto;
+
+}
+
+@keyframes bounceCake{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+}
+
+#giftBtn{
+
+background:linear-gradient(45deg,#ff4081,#ff80ab);
+
+padding:18px 40px;
+
+font-size:20px;
+
+}
+
+#giftBtn:hover{
+
+box-shadow:0 0 30px #ff80ab;
+
+}
+
+/* Gift Section */
+
+.giftBox{
+
+font-size:140px;
+
+cursor:pointer;
+
+transition:.4s;
+
+animation:giftShake 2s infinite;
+
+}
+
+.giftBox:hover{
+
+transform:scale(1.15) rotate(8deg);
+
+}
+
+@keyframes giftShake{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+25%{
+
+transform:rotate(-5deg);
+
+}
+
+50%{
+
+transform:rotate(5deg);
+
+}
+
+75%{
+
+transform:rotate(-5deg);
+
+}
+
+100%{
+
+transform:rotate(0deg);
+
+}
+
+}
+
+#giftPage h2{
+
+margin-top:25px;
+
+font-size:2rem;
+
+}
+
+/* Love Letter */
+
+#letterPage h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:3.5rem;
+
+margin-bottom:30px;
+
+color:#fff;
+
+}
+
+.letter{
+
+background:rgba(255,255,255,.15);
+
+padding:30px;
+
+border-radius:20px;
+
+text-align:left;
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+line-height:2;
+
+font-size:20px;
+
+min-height:300px;
+
+}
+
+#typing{
+
+white-space:pre-line;
+
+font-size:20px;
+
+}
+
+#nextGallery{
+
+margin-top:30px;
+
+background:linear-gradient(45deg,#ff4d94,#7c3aed);
+
+}
+
+/* Rose Petals */
+
+.petals{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.petals span{
+
+position:absolute;
+
+top:-50px;
+
+font-size:30px;
+
+animation:petalFall 10s linear infinite;
+
+}
+
+.petals span:nth-child(1){left:5%;animation-delay:0s;}
+.petals span:nth-child(2){left:18%;animation-delay:2s;}
+.petals span:nth-child(3){left:35%;animation-delay:5s;}
+.petals span:nth-child(4){left:52%;animation-delay:1s;}
+.petals span:nth-child(5){left:68%;animation-delay:3s;}
+.petals span:nth-child(6){left:82%;animation-delay:6s;}
+.petals span:nth-child(7){left:94%;animation-delay:4s;}
+
+@keyframes petalFall{
+
+0%{
+
+transform:translateY(-100px) rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(120vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+/* Sparkles */
+
+.sparkles{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+.sparkles span{
+
+position:absolute;
+
+font-size:20px;
+
+animation:sparkle 5s infinite;
+
+opacity:.7;
+
+}
+
+.sparkles span:nth-child(1){top:15%;left:15%;}
+.sparkles span:nth-child(2){top:35%;left:80%;}
+.sparkles span:nth-child(3){top:70%;left:20%;}
+.sparkles span:nth-child(4){top:55%;left:60%;}
+.sparkles span:nth-child(5){top:10%;left:55%;}
+
+@keyframes sparkle{
+
+0%,100%{
+
+transform:scale(.5);
+
+opacity:.2;
+
+}
+
+50%{
+
+transform:scale(1.3);
+
+opacity:1;
+
+}
+
+}
+
+/* Balloons */
+
+.balloons{
+
+position:fixed;
+
+bottom:-120px;
+
+width:100%;
+
+display:flex;
+
+justify-content:space-evenly;
+
+pointer-events:none;
+
+}
+
+.balloon{
+
+width:55px;
+
+height:70px;
+
+border-radius:50%;
+
+animation:flyBalloon 18s linear infinite;
+
+}
+
+.red{
+
+background:#ff1744;
+
+}
+
+.blue{
+
+background:#2196f3;
+
+}
+
+.pink{
+
+background:#ff80ab;
+
+}
+
+.yellow{
+
+background:#ffd600;
+
+}
+
+@keyframes flyBalloon{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(-130vh);
+
+}
+
+}
+/* ===================================
+   Premium CSS - Part 3
+   Gallery • Proposal • Celebration
+===================================*/
+
+/* Gallery */
+
+.gallery{
+    width:100%;
+    margin:30px auto;
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+}
+
+.gallery img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:25px;
+    display:none;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.gallery img.active{
+    display:block;
+    animation:fadePhoto 1s;
+}
+
+@keyframes fadePhoto{
+    from{
+        opacity:0;
+        transform:scale(.95);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.galleryButtons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:25px;
+}
+
+.continueBtn{
+    margin-top:35px;
+    background:linear-gradient(45deg,#ff4d94,#7c3aed);
+}
+
+/* Proposal */
+
+#proposalPage{
+    position:relative;
+}
+
+.ring{
+    font-size:90px;
+    animation:ringFloat 2s infinite;
+}
+
+@keyframes ringFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+.proposalTitle{
+    font-family:'Great Vibes',cursive;
+    font-size:4rem;
+    margin:20px 0;
+    color:#fff;
+    text-shadow:0 0 20px hotpink;
+}
+
+.proposalText{
+    font-size:20px;
+    line-height:2;
+    margin:25px auto;
+    max-width:700px;
+}
+
+.proposalButtons{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:35px;
+}
+
+#yesBtn{
+    background:linear-gradient(45deg,#00c853,#64dd17);
+    font-size:22px;
+    padding:16px 40px;
+}
+
+#yesBtn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px #00e676;
+}
+
+#noBtn{
+    background:linear-gradient(45deg,#ff1744,#ff5252);
+    font-size:22px;
+    padding:16px 40px;
+    position:relative;
+}
+
+#noBtn:hover{
+    transform:scale(1.08);
+}
+
+/* YES Celebration */
+
+#yesPage h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+#yesPage h2{
+    font-size:90px;
+    margin:20px;
+}
+
+.celebration{
+    font-size:70px;
+    animation:celebrate 1.5s infinite;
+}
+
+@keyframes celebrate{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.25);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+.promiseList{
+    list-style:none;
+    margin:35px auto;
+    max-width:500px;
+}
+
+.promiseList li{
+    padding:12px;
+    margin:10px 0;
+    font-size:22px;
+    background:rgba(255,255,255,.12);
+    border-radius:15px;
+}
+
+/* Final Page */
+
+#finalPage h1{
+    font-family:'Great Vibes',cursive;
+    font-size:5rem;
+    color:#fff;
+}
+
+#finalPage h2{
+    margin:20px 0;
+    font-size:2.3rem;
+}
+
+#finalPage h3{
+    margin-bottom:25px;
+    font-size:1.5rem;
+}
+
+.infinity{
+    font-size:90px;
+    animation:rotateInfinity 8s linear infinite;
+}
+
+@keyframes rotateInfinity{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.love{
+    color:#ff80ab;
+    text-shadow:0 0 20px #ff80ab;
+    animation:glow 2s infinite;
+}
+
+@keyframes glow{
+    0%,100%{
+        text-shadow:0 0 10px #ff80ab;
+    }
+    50%{
+        text-shadow:0 0 35px #ff80ab;
+    }
+}
+
+footer{
+    margin-top:50px;
+    text-align:center;
+    color:white;
+    opacity:.9;
+}
+
+footer h2{
+    margin-bottom:10px;
+}
+/* ==========================================
+   Premium CSS - Part 4
+   Responsive + Final Effects
+========================================== */
+
+/* Floating Animation */
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+.float {
+
+    animation: float 3s ease-in-out infinite;
+
+}
+
+/* Glow Animation */
+
+.glow {
+
+    animation: glowText 2s infinite;
+
+}
+
+@keyframes glowText {
+
+    0% {
+        text-shadow: 0 0 8px #fff;
+    }
+
+    50% {
+        text-shadow:
+            0 0 20px #ff66cc,
+            0 0 40px #ff1493;
+    }
+
+    100% {
+        text-shadow: 0 0 8px #fff;
+    }
+
+}
+
+/* Fade Animation */
+
+.fadeIn {
+
+    animation: fadeIn 1.2s ease;
+
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Fireworks Canvas */
+
+#fireworks {
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
+
+/* Background Blur */
+
+.blur {
+
+    backdrop-filter: blur(12px);
+
+}
+
+/* Image Hover */
+
+.gallery img:hover{
+
+    transform:scale(1.03);
+
+    transition:.5s;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#1a0033;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff4da6;
+
+    border-radius:10px;
+
+}
+
+/* Selection */
+
+::selection{
+
+    background:#ff4da6;
+
+    color:white;
+
+}
+
+/* Footer */
+
+footer{
+
+    padding:25px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    opacity:.9;
+
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+.name{
+
+font-size:3rem;
+
+}
+
+.proposalTitle{
+
+font-size:2.8rem;
+
+}
+
+.countdown{
+
+gap:10px;
+
+}
+
+.box{
+
+width:70px;
+
+height:85px;
+
+}
+
+.box span{
+
+font-size:1.5rem;
+
+}
+
+.gallery img{
+
+height:260px;
+
+}
+
+button{
+
+font-size:16px;
+
+padding:14px 25px;
+
+}
+
+section{
+
+padding:20px;
+
+}
+
+.letter{
+
+font-size:17px;
+
+}
+
+.promiseList li{
+
+font-size:17px;
+
+}
+
+#finalPage h1{
+
+font-size:3rem;
+
+}
+
+}
+
+/* Small Phones */
+
+@media(max-width:480px){
+
+.name{
+
+font-size:2.5rem;
+
+}
+
+#birthdayPage h1{
+
+font-size:2rem;
+
+}
+
+.proposalTitle{
+
+font-size:2.2rem;
+
+}
+
+.gallery img{
+
+height:220px;
+
+}
+
+.box{
+
+width:60px;
+
+height:75px;
+
+}
+
+.box span{
+
+font-size:1.2rem;
+
+}
+
+p{
+
+font-size:16px;
+
+}
+
+}
+
+/* End of Premium CSS */
