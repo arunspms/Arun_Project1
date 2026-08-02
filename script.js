@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
 
 //const targetDate = new Date("August 12, 2026 00:00:00").getTime();
 
-const targetDate = new Date("August 1, 2026 00:00:00").getTime();
+const targetDate = new Date().getTime() - 1000;
 const countdown = setInterval(() => {
 
     const now = new Date().getTime();
