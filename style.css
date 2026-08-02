@@ -1,0 +1,5 @@
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ff6fa5,#7b68ee);display:flex;justify-content:center;align-items:center;height:100vh;color:#fff;overflow:hidden}
+.card{background:rgba(255,255,255,.15);padding:30px;border-radius:20px;text-align:center;backdrop-filter:blur(10px);max-width:700px}
+button{padding:12px 24px;margin:10px;border:none;border-radius:30px;font-size:18px;cursor:pointer}
+#yes{background:#28a745;color:#fff}#no{background:#dc3545;color:#fff;position:relative}
+#countdown{font-size:2rem;font-weight:bold}
