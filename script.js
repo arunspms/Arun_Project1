@@ -17,9 +17,9 @@ window.addEventListener("load", () => {
 
 // Countdown
 
-const targetDate = new Date("August 12, 2026 00:00:00").getTime();
+//const targetDate = new Date("August 12, 2026 00:00:00").getTime();
 
-//const targetDate = new Date().getTime() - 1000;
+const targetDate = new Date().getTime() - 1000;
 const countdown = setInterval(() => {
 
     const now = new Date().getTime();
